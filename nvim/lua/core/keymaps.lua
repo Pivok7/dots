@@ -20,12 +20,12 @@ vim.keymap.set('n', '<leader>th', '<cmd> Themery <CR>', opts)
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 vim.keymap.set('i', '<C-s>', '<ESC> <cmd> w <CR>', opts)
 
+-- Quit file
+vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
+
 -- Select all
 vim.keymap.set('n', '<C-a>', 'gg{vG}', opts)
 vim.keymap.set('i', '<C-a>', '<Esc>gg{vG}', opts)
-
--- Quit file
-vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
 
 -- Delete single character without copying into register
 vim.keymap.set({ 'n', 'v' }, 'x', '"_x', opts)

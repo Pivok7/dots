@@ -8,7 +8,7 @@ vim.o.undofile = true -- Save undo history
 vim.o.ignorecase = true -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.backup = false -- Creates a backup file
 vim.o.writebackup = false -- If a file is being edited by another program, it is not allowed to be edited
-vim.o.whichwrap = 'bs<>[]hl' -- Which "horizontal" keys are allowed to travel to prev/next line
+-- vim.o.whichwrap = 'bs<>[]hl' -- Which "horizontal" keys are allowed to travel to prev/next line
 vim.o.linebreak = true -- Companion to wrap don't split words
 vim.o.scrolloff = 8 -- Minimal number of screen lines to keep above and below the cursor
 vim.o.hlsearch = false -- Set highlight on search (default: true)
@@ -26,4 +26,4 @@ vim.opt.runtimepath:remove '/usr/share/vim/vimfiles' -- Separate vim plugins fro
 
 vim.g.cmptoggle = true -- Set cmp autocompletion on as default
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = true }) -- Required to display LSP messages

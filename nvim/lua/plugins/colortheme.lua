@@ -9,8 +9,8 @@ return {
     "xero/evangelion.nvim",
     "Biscuit-Theme/nvim",
     "Skullamortis/forest.nvim",
-    "zenbones-theme/zenbones.nvim",
     "folke/tokyonight.nvim",
+    "RRethy/base16-nvim",
 
     lazy = false,
     priority = 1000,

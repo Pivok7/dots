@@ -46,7 +46,6 @@ return {
 	    lspconfig.zls.setup({
 	        capabilities = capabilities,
 	    })
-	    vim.g.zig_fmt_autosave = 0
 
 	    lspconfig.rust_analyzer.setup({
 		capabilities = capabilities,

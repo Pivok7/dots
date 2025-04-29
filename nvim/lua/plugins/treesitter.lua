@@ -7,7 +7,7 @@ return {
         ensure_installed = { 'lua' },
         auto_install = true,
         highlight = { enable = false, },
-        indent = { enable = true, disable = { 'ruby' } },
+        indent = { enable = true },
     },
 
 }

@@ -24,8 +24,7 @@ vim.keymap.set('i', '<C-s>', '<ESC> <cmd> w <CR>', opts)
 vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
 
 -- Select all
-vim.keymap.set('n', '<C-a>', 'gg{vG}', opts)
-vim.keymap.set('i', '<C-a>', '<Esc>gg{vG}', opts)
+vim.keymap.set('v', '<C-a>', 'gg{oG}', opts)
 
 -- Delete single character without copying into register
 vim.keymap.set({ 'n', 'v' }, 'x', '"_x', opts)
@@ -73,5 +72,3 @@ vim.keymap.set('n', '<leader>dm', function()
 	vim.diagnostic.disable(0)
     end
 end, { desc = 'Toggle diagnostic messages' })
-
-

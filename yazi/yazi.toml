@@ -62,7 +62,7 @@ play = [
 [open]
 rules = [
 	# Exec
-	{ mime = "application/*", use = "bin_open"},
+	{ mime = "*executable*", use = "bin_open"},
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text

@@ -1,0 +1,14 @@
+-kitty
+-hyprland
+-rofi
+-waybar
+-hyprshot
+-hyprpaper
+-hyprlock
+-hypridle
+-hyprsunset
+-wlogout
+-xdg-desktop-portal-hyprland
+-hyprpolkitagent
+-pcmanfm-qt
+-udiskie

@@ -9,6 +9,5 @@
 -hyprsunset
 -wlogout
 -swaync
--hyprpolkitagent
 -pcmanfm-qt
 -udiskie

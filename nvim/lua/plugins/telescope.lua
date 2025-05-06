@@ -1,9 +1,7 @@
 return {
     {
         'nvim-telescope/telescope.nvim',
-        dependencies = {
-            'nvim-lua/plenary.nvim'
-        },
+	dependencies = { "nvim-lua/plenary.nvim" },
 
 	config = function()
             local builtin = require('telescope.builtin')
@@ -16,27 +14,4 @@ return {
             vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Find Existing [B]uffers' })
         end
     },
-    {
-        'nvim-telescope/telescope-ui-select.nvim',
-        config = function()
-            local actions = require("telescope.actions")
-
-            require("telescope").setup({
-                extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {}
-                    }
-                },
-                mappings = {
-                    i = {
-                        ["<C-n>"] = actions.cycle_history_next,
-                        ["<C-p>"] = actions.cycle_history_prev,
-                        ["<C-j>"] = actions.move_selection_next,
-                        ["<C-k>"] = actions.move_selection_previous,
-                    }
-                },
-                require("telescope").load_extension("ui-select")
-            })
-        end
-    }
 }

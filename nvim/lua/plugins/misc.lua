@@ -1,4 +1,4 @@
--- Standalone plugins with less than 10 lines of config go here
+-- Standalone plugins that are not essential
 return {
     {
 	-- Hints keybinds
@@ -6,13 +6,13 @@ return {
 	opts = {
 	    win = {
 		border = {
-		    { '┌', 'FloatBorder' },
+		    { '╭', 'FloatBorder' },
 		    { '─', 'FloatBorder' },
-		    { '┐', 'FloatBorder' },
+		    { '╮', 'FloatBorder' },
 		    { '│', 'FloatBorder' },
-		    { '┘', 'FloatBorder' },
+		    { '╯', 'FloatBorder' },
 		    { '─', 'FloatBorder' },
-		    { '└', 'FloatBorder' },
+		    { '╰', 'FloatBorder' },
 		    { '│', 'FloatBorder' },
 		},
 	    },

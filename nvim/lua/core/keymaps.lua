@@ -72,3 +72,32 @@ vim.keymap.set('n', '<leader>dm', function()
 	vim.diagnostic.disable(0)
     end
 end, { desc = 'Toggle diagnostic messages' })
+
+-- Toggle virtual text
+
+local lsp_lines_active = true
+local virtual_text_active = true
+
+local update_virtual_text = function()
+    if virtual_text_active then
+	vim.diagnostic.config({ virtual_text = not lsp_lines_active })
+	vim.diagnostic.config({ virtual_lines = lsp_lines_active })
+    else
+	vim.diagnostic.config({ virtual_text = false })
+	vim.diagnostic.config({ virtual_lines = false })
+    end
+end
+
+-- Toggle lsp lines plugin
+
+vim.keymap.set('n', '<leader>vl', function()
+    lsp_lines_active = not lsp_lines_active
+    update_virtual_text()
+end, { desc = 'Toggle virtual text modes' })
+
+-- Toggle virtual text
+
+vim.keymap.set('n', '<leader>vt', function()
+    virtual_text_active = not virtual_text_active
+    update_virtual_text()
+end, { desc = 'Toggle virtual text modes' })

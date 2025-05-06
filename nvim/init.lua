@@ -12,23 +12,26 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Disable deprecated function messages
-vim.deprecate = function() end
+vim.lsp.enable({
+    'lua-language-server',
+    'clangd',
+    'zls',
+    'rust-analyzer',
+    'pyright',
+})
 
 require('lazy').setup({
-
-require 'plugins.colortheme',
-require 'plugins.themery',
-require 'plugins.neotree',
-require 'plugins.bufferline',
-require 'plugins.lualine',
-require 'plugins.treesitter',
-require 'plugins.telescope',
-require 'plugins.lsp',
-require 'plugins.autocompletion',
-require 'plugins.indent-blankline',
-require 'plugins.alpha',
-require 'plugins.misc',
-
+    require 'plugins.colortheme',
+    require 'plugins.themery',
+    require 'plugins.bufferline',
+    require 'plugins.lualine',
+    require 'plugins.treesitter',
+    require 'plugins.telescope',
+    require 'plugins.yazi',
+    require 'plugins.mason',
+    require 'plugins.autocompletion',
+    require 'plugins.indent-blankline',
+    require 'plugins.alpha',
+    require 'plugins.misc',
 })
 

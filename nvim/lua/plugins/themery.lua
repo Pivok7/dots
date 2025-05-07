@@ -6,6 +6,8 @@ return {
     {
 	"zaldih/themery.nvim",
 	    lazy = false,
+	    vim.keymap.set('n', '<leader>th', '<cmd> Themery <CR>'),
+
 	    config = function()
 	    require("themery").setup({
 

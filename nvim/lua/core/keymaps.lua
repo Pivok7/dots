@@ -13,9 +13,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Exit terminal mode with Esc
 vim.keymap.set({ 't' }, '<Esc>', '<C-\\><C-n>', {silent = true})
 
--- Open theme picker
-vim.keymap.set('n', '<leader>th', '<cmd> Themery <CR>', opts)
-
 -- Save file
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 vim.keymap.set('i', '<C-s>', '<ESC> <cmd> w <CR>', opts)

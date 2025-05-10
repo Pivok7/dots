@@ -1,6 +1,6 @@
 return {
     {
-        'nvim-telescope/telescope.nvim',
+        "nvim-telescope/telescope.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 
 	config = function()
@@ -12,6 +12,6 @@ return {
             vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Finder [R]esume' })
             vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
             vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Find Existing [B]uffers' })
-        end
+        end,
     },
 }

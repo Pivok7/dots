@@ -90,11 +90,11 @@ end
 vim.keymap.set('n', '<leader>vl', function()
     lsp_lines_active = not lsp_lines_active
     update_virtual_text()
-end, { desc = 'Toggle virtual text modes' })
+end, { desc = 'Toggle virtual text mode' })
 
 -- Toggle virtual text
 
 vim.keymap.set('n', '<leader>vt', function()
     virtual_text_active = not virtual_text_active
     update_virtual_text()
-end, { desc = 'Toggle virtual text modes' })
+end, { desc = 'Toggle virtual text' })

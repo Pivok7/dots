@@ -1,30 +1,30 @@
 return {
     {
-	"hrsh7th/cmp-nvim-lsp",
-	"L3MON4D3/LuaSnip",
-
+	'hrsh7th/cmp-nvim-lsp',
+	'L3MON4D3/LuaSnip',
 	dependencies = {
-	    "saadparwaiz1/cmp_luasnip",
-	    "rafamadriz/friendly-snippets",
+	    'saadparwaiz1/cmp_luasnip',
+	    'rafamadriz/friendly-snippets',
 	},
     },
     {
-	"hrsh7th/nvim-cmp",
+	'hrsh7th/nvim-cmp',
 	dependencies = {
-	    "hrsh7th/cmp-buffer",
-	    "hrsh7th/cmp-path",
+	    'hrsh7th/cmp-buffer',
+	    'hrsh7th/cmp-path',
 	},
-	config = function()
-	    local cmp = require("cmp")
-	    local luasnip = require("luasnip")
 
-	    require("luasnip.loaders.from_vscode").lazy_load()
+	config = function()
+	    local cmp = require('cmp')
+	    local luasnip = require('luasnip')
+
+	    require('luasnip.loaders.from_vscode').lazy_load()
 
 	    cmp.setup({
 		enabled = function()
 		    return vim.g.cmptoggle
 		end,
-		vim.keymap.set("n", "<leader>a", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", { desc = "Toggle autocompletion" }),
+		vim.keymap.set('n', '<leader>a', '<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>', { desc = 'Toggle autocompletion' }),
 		snippet = {
 		    expand = function(args)
 			luasnip.lsp_expand(args.body)

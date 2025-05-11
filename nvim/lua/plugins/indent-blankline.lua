@@ -1,6 +1,6 @@
 return {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
     opts = {
 	indent = {
 	    char = '▏',
@@ -12,13 +12,13 @@ return {
 	},
 	exclude = {
 	    filetypes = {
-		"help",
-		"startify",
-		"dashboard",
-		"packer",
-		"neogitstatus",
-		"NvimTree",
-		"Trouble",
+		'help',
+		'startify',
+		'dashboard',
+		'packer',
+		'neogitstatus',
+		'NvimTree',
+		'Trouble',
 	    },
 	},
     },

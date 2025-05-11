@@ -1,9 +1,9 @@
 return {
-    "goolord/alpha-nvim",
+    'goolord/alpha-nvim',
 
     config = function()
-    local alpha = require "alpha"
-    local dashboard = require "alpha.themes.startify"
+    local alpha = require 'alpha'
+    local dashboard = require 'alpha.themes.startify'
 
     dashboard.section.header.val = {
 

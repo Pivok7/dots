@@ -1,4 +1,5 @@
 -- Keymaps for better default experience
+-- Plugin specific keymaps can be found in plugins folder
 
 -- Set leader key
 vim.g.mapleader = ' '
@@ -31,10 +32,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
 vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
 
 -- Tabs
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', {desc = 'Next tab'}, opts)
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', {desc = 'Previus tab'}, opts)
-vim.keymap.set('n', '<leader>q', ':Bdelete!<CR>', {desc = 'Close current tab'}, opts)
-vim.keymap.set('n', '<leader>n', '<:enew <CR>', {desc = 'Open new tab'}, opts)
+vim.keymap.set('n', '<leader>wq', '<cmd>Bdelete!<CR>', {desc = 'Close current tab'}, opts)
+vim.keymap.set('n', '<leader>wn', '<cmd>enew <CR>', {desc = 'Open new tab'}, opts)
 
 -- Open terminal
 --vim.keymap.set('n', '<leader>/', '<C-w>s <C-w>k <C-w>_ <C-w>j 12<C-w>+ :terminal <CR>', {desc = 'Open terminal'}, opts)
@@ -53,8 +52,8 @@ vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('v', 'p', '"_dP', opts)
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {desc = 'Go to previous diagnostic message'})
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {desc = 'Go to next diagnostic message'})
+vim.keymap.set('n', 'd[', vim.diagnostic.goto_prev, {desc = 'Go to previous diagnostic message'})
+vim.keymap.set('n', 'd]', vim.diagnostic.goto_next, {desc = 'Go to next diagnostic message'})
 vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, {desc = 'Open diagnostics list'})
 
 -- Toggle diagnostics

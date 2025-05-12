@@ -25,5 +25,5 @@ vim.opt.iskeyword:append '-' -- Hyphenated words recognized by searches
 vim.opt.runtimepath:remove '/usr/share/vim/vimfiles' -- Separate vim plugins from neovim in case vim still in use
 vim.g.cmptoggle = true -- Set cmp autocompletion on as default
 
-vim.diagnostic.config({ virtual_text = false }) -- Must be true to display normal LSP messages but we use virtual lines instead
-vim.diagnostic.config({ virtual_lines = true }) -- Use virtual lines
+vim.diagnostic.config({ virtual_text = true }) -- Required for LSP messages
+vim.diagnostic.config({ virtual_lines = false }) -- Use virtual lines

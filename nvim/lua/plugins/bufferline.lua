@@ -9,8 +9,8 @@ return {
     vim.keymap.set('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<CR>', {desc = 'Previus tab'}),
     vim.keymap.set('n', '<leader>wj', '<cmd>BufferLineMovePrev<CR>', {desc = 'Move tab left'}),
     vim.keymap.set('n', '<leader>wk', '<cmd>BufferLineMoveNext<CR>', {desc = 'Move tab right'}),
-    vim.keymap.set('n', '<leader>wJ', '<cmd>lua require("bufferline").move_to(1)<CR>', {desc = 'Move tab to start'}),
-    vim.keymap.set('n', '<leader>wK', '<cmd>lua require("bufferline").move_to(-1)<CR>', {desc = 'Move tab to end'}),
+    vim.keymap.set('n', '<leader>wh', '<cmd>lua require("bufferline").move_to(1)<CR>', {desc = 'Move tab to start'}),
+    vim.keymap.set('n', '<leader>wl', '<cmd>lua require("bufferline").move_to(-1)<CR>', {desc = 'Move tab to end'}),
     vim.keymap.set('n', '<leader>wp', '<cmd>BufferLineTogglePin<CR>', {desc = 'Pin tab'}),
 
     config = function()

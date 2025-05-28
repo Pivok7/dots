@@ -71,7 +71,7 @@ end, { desc = 'Toggle diagnostic messages' })
 
 -- Toggle virtual text
 
-local lsp_lines_active = true
+local lsp_lines_active = false
 local virtual_text_active = true
 
 local update_virtual_text = function()

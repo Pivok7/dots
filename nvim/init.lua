@@ -32,7 +32,6 @@ require('lazy').setup({
     require 'plugins.mason',
     require 'plugins.autocompletion',
     require 'plugins.indent-blankline',
-    require 'plugins.alpha',
     require 'plugins.misc',
 })
 

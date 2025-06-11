@@ -18,7 +18,7 @@ return {
             return ya.notify { title = "Dragon", content = "No file selected", level = "warn", timeout = 5 }
         end
 
-        local status, err = Command("dragon"):arg("--and-exit"):args(urls):spawn():wait()
+        local status, err = Command("dragon"):arg("--and-exit"):arg(urls):spawn():wait()
         if not status or not status.success then
             ya.notify {
                 title = "Dragon",

@@ -12,14 +12,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Exit terminal mode with Esc
-vim.keymap.set({ 't' }, '<Esc>', '<C-\\><C-n>', {silent = true})
-
--- Save file
-vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
-vim.keymap.set('i', '<C-s>', '<ESC> <cmd> w <CR>', opts)
-
--- Quit file
-vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
+vim.keymap.set({ 't' }, '<Esc>', '<C-\\><C-n>', { silent = true })
 
 -- Select all
 vim.keymap.set('v', '<C-a>', 'gg{oG}', opts)

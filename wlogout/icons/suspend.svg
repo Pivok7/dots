@@ -9,6 +9,9 @@
    id="svg1"
    sodipodi:docname="suspend.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:export-filename="suspend.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="2.8279683"
-     inkscape:cx="43.317318"
-     inkscape:cy="49.682312"
-     inkscape:window-width="1064"
+     inkscape:cx="43.140512"
+     inkscape:cy="49.682311"
+     inkscape:window-width="1149"
      inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -44,7 +47,7 @@
   <g
      id="layer1"
      transform="translate(-18.929803,-83.582619)"
-     style="fill:#00ee5e;fill-opacity:1"
+     style="fill:#00ef5f;fill-opacity:1"
      inkscape:export-filename="suspend.svg"
      inkscape:export-xdpi="1103.5973"
      inkscape:export-ydpi="1103.5973">
@@ -52,7 +55,7 @@
        xml:space="preserve"
        transform="matrix(2.8776578,0,0,2.8776578,-386.2017,-953.36901)"
        id="text1"
-       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#00ee5e;fill-opacity:1"><tspan
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#00ef5f;fill-opacity:1"><tspan
          x="140.92578"
          y="368.44336"
          id="tspan4"><tspan

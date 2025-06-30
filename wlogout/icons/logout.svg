@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="7.7630077"
-     inkscape:cx="48.885691"
-     inkscape:cy="54.295965"
-     inkscape:window-width="1027"
+     inkscape:cx="48.756876"
+     inkscape:cy="54.295966"
+     inkscape:window-width="1208"
      inkscape:window-height="1034"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -47,16 +47,16 @@
   <g
      id="layer1"
      transform="translate(-19.334474,-82.166266)"
-     style="fill:#efb700;fill-opacity:1">
+     style="fill:#e9bc00;fill-opacity:1">
     <text
        xml:space="preserve"
        transform="matrix(2.8776578,0,0,2.8776578,-386.2017,-953.36901)"
        id="text1"
-       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#efb700;fill-opacity:1"><tspan
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#e9bc00;fill-opacity:1"><tspan
          x="140.92578"
          y="368.44336"
-         id="tspan4"><tspan
+         id="tspan3"><tspan
            style="font-size:12px;font-family:'Iosevka Etoile';-inkscape-font-specification:'Iosevka Etoile, Normal'"
-           id="tspan1">󰍃</tspan></tspan></text>
+           id="tspan2">󰍃</tspan></tspan></text>
   </g>
 </svg>

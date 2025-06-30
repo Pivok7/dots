@@ -7,8 +7,34 @@
    viewBox="0 0 26.371038 26.843155"
    version="1.1"
    id="svg1"
+   sodipodi:docname="reboot.svg"
+   inkscape:export-filename="reboot.svg"
+   inkscape:export-xdpi="963.17786"
+   inkscape:export-ydpi="963.17786"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="8.3091481"
+     inkscape:cx="49.884777"
+     inkscape:cy="50.727222"
+     inkscape:window-width="1027"
+     inkscape:window-height="1034"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
   <defs
      id="defs1">
     <rect
@@ -29,8 +55,8 @@
        style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#ff6800;fill-opacity:1"><tspan
          x="140.92578"
          y="368.44336"
-         id="tspan3"><tspan
+         id="tspan4"><tspan
            style="font-size:12px;font-family:'Iosevka Etoile';-inkscape-font-specification:'Iosevka Etoile, Normal'"
-           id="tspan2"></tspan></tspan></text>
+           id="tspan1"></tspan></tspan></text>
   </g>
 </svg>

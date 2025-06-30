@@ -5,9 +5,9 @@
 @define-color red #ff553f;
 @define-color orange #ff6800;
 @define-color yellow #efb700;
-@define-color green #68df00;
-@define-color aqua #00f08b;
-@define-color blue #00eaff;
+@define-color green #9ed300;
+@define-color aqua #00ee5e;
+@define-color blue #00f1c5;
 @define-color purple #c18fff;
 
 * {
@@ -21,7 +21,7 @@ window {
 
 grid {
     border-radius: 30px;
-    margin: 80px 100px;
+    margin: 40px 80px;
     padding: 10px;
     background-color: @bg;
 }
@@ -32,7 +32,6 @@ button {
     border-color: @black;
     outline-style: none;
     margin: 10px;
-    padding: 40px;
     background-color: @black;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,30 +46,30 @@ button:hover {
 
 #shutdown {
     color: @red;
-    background-image: image(url("icons/shutdown_color.svg"));
+    background-image: image(url("icons/shutdown.png"));
 }
 
 #reboot {
     color: @orange;
-    background-image: image(url("icons/reboot_color.svg"));
+    background-image: image(url("icons/reboot.png"));
 }
 
 #logout {
     color: @yellow;
-    background-image: image(url("icons/logout_color.svg"));
+    background-image: image(url("icons/logout.png"));
 }
 
 #lock {
     color: @green;
-    background-image: image(url("icons/lock_color.svg"));
+    background-image: image(url("icons/lock.png"));
 }
 
 #suspend {
     color: @aqua;
-    background-image: image(url("icons/suspend_color.svg"));
+    background-image: image(url("icons/suspend.png"));
 }
 
 #hibernate {
     color: @blue;
-    background-image: image(url("icons/hibernate_color.svg"));
+    background-image: image(url("icons/hibernate.png"));
 }

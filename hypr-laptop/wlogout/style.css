@@ -2,67 +2,75 @@
 @define-color bg #1d2021;
 
 @define-color black #282828;
-@define-color red #cc241d;
-@define-color green #aedf3c;
-@define-color yellow #eafd2f;
-@define-color blue #83c598;
-@define-color purple #d3869b;
-@define-color aqua #8edf48;
-@define-color orange #fe8019;
+@define-color red #ff553f;
+@define-color orange #ff6800;
+@define-color yellow #efb700;
+@define-color green #68df00;
+@define-color aqua #00f08b;
+@define-color blue #00eaff;
+@define-color purple #c18fff;
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
 
 window {
-  background-color: rgba(40, 40, 40, 0.5);
-  font-family: TerminessTTF Nerd Font;
-  font-size: 80px;
+    background-color: rgba(12, 12, 12, 0.9);
 }
 
 grid {
-  border-radius: 30px;
-  margin: 80px 100px;
-  padding: 10px;
-  background-color: @bg;
+    border-radius: 30px;
+    margin: 80px 100px;
+    padding: 10px;
+    background-color: @bg;
 }
 
 button {
-  border-radius: 20px;
-  border-width: 3px;
-  border-color: @black;
-  outline-style: none;
-  margin: 10px;
-  padding: 40px;
-  background-repeat: no-repeat;
-  background-size: 0%;
-  background-position: center;
-  background-color: @black;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: @black;
+    outline-style: none;
+    margin: 10px;
+    padding: 40px;
+    background-color: @black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
 }
 
 button:focus,
 button:active,
 button:hover {
-  border-color: @color;
+    border-color: @color;
 }
 
-#poweroff {
-  color: @red;
-}
-
-#lock {
-  color: @green;
+#shutdown {
+    color: @red;
+    background-image: image(url("icons/shutdown_color.svg"));
 }
 
 #reboot {
-  color: @orange;
-}
-
-#suspend {
-  color: @aqua;
+    color: @orange;
+    background-image: image(url("icons/reboot_color.svg"));
 }
 
 #logout {
-  color: @yellow;
+    color: @yellow;
+    background-image: image(url("icons/logout_color.svg"));
+}
+
+#lock {
+    color: @green;
+    background-image: image(url("icons/lock_color.svg"));
+}
+
+#suspend {
+    color: @aqua;
+    background-image: image(url("icons/suspend_color.svg"));
 }
 
 #hibernate {
-  color: @blue;
+    color: @blue;
+    background-image: image(url("icons/hibernate_color.svg"));
 }
-

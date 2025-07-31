@@ -18,14 +18,28 @@ return {
             return ya.notify { title = "Dragon", content = "No file selected", level = "warn", timeout = 5 }
         end
 
-        local status, err = Command("dragon"):arg("--and-exit"):arg(urls):spawn():wait()
-        if not status or not status.success then
-            ya.notify {
-                title = "Dragon",
-                content = string.format("Dragon failed to start, exit code %s", status and status.code or err),
-                level = "error",
-                timeout = 5,
-            }
-        end
+	if #urls == 1 then
+	    local status, err = Command("dragon"):arg("--and-exit"):arg(urls):spawn():wait()
+	    if not status or not status.success then
+		ya.notify {
+		    title = "Dragon",
+		    content = string.format("Dragon failed to start, exit code %s", status and status.code or err),
+		    level = "error",
+		    timeout = 5,
+		}
+	    end
+
+	else
+	    local status, err = Command("dragon"):arg("--keep"):arg(urls):spawn():wait()
+	    if not status or not status.success then
+		ya.notify {
+		    title = "Dragon",
+		    content = string.format("Dragon failed to start, exit code %s", status and status.code or err),
+		    level = "error",
+		    timeout = 5,
+		}
+	    end
+	end
+
     end,
 }

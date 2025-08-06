@@ -22,14 +22,6 @@ return {
 	    modified_icon = '●',
 	    icon_pinned = '󰐃',
 	},
-	highlights = {
-	    separator = {
-		fg = '#434C5E',
-	    },
-		buffer_selected = {
-		bold = true,
-	    },
-	},
     }
 
     end,

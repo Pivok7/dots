@@ -6,19 +6,22 @@ return {
     {
 	'zaldih/themery.nvim',
 	    lazy = false,
+	    priority = 1000,
 	    vim.keymap.set('n', '<leader>th', '<cmd> Themery <CR>'),
 
 	    config = function()
 	    require('themery').setup({
 
 	    themes = {
-		'lillilac',
+		'default',
+		'everforest',
 		'miasma',
 		'lackluster-hack',
 		'lackluster-mint',
 		'forest-night',
 		'forest-serene',
 		'forest-day',
+		'lillilac',
 		'evangelion',
 		'neofusion',
 		'biscuit',

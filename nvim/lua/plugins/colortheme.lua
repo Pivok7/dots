@@ -1,5 +1,6 @@
 return {
     'xero/miasma.nvim',
+    'neanias/everforest-nvim',
     'rebelot/kanagawa.nvim',
     'slugbyte/lackluster.nvim',
     'diegoulloao/neofusion.nvim',

@@ -27,3 +27,11 @@ vim.g.cmptoggle = true -- Set cmp autocompletion on as default
 
 vim.diagnostic.config({ virtual_text = true }) -- Required for LSP messages
 vim.diagnostic.config({ virtual_lines = false }) -- Use virtual lines
+
+-- Show trailing whitespace
+vim.cmd('set list')
+vim.opt.listchars = {
+  tab = "  ",
+  trail = "·",
+  nbsp = "␣",
+}

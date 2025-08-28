@@ -47,20 +47,6 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 -- Diagnostic keymaps
 vim.keymap.set('n', 'd[', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', 'd]', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
--- Toggle diagnostics
-local diagnostics_active = true
-
-vim.keymap.set('n', '<leader>dm', function()
-    diagnostics_active = not diagnostics_active
-
-    if diagnostics_active then
-	vim.diagnostic.enable(0)
-    else
-	vim.diagnostic.disable(0)
-    end
-end, { desc = 'Toggle diagnostic messages' })
 
 -- Toggle virtual text
 

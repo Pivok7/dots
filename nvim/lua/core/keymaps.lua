@@ -49,7 +49,6 @@ vim.keymap.set('n', 'd[', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', 'd]', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
 -- Toggle virtual text
-
 local lsp_lines_active = false
 local virtual_text_active = true
 
@@ -64,7 +63,6 @@ local update_virtual_text = function()
 end
 
 -- Toggle lsp lines plugin
-
 vim.keymap.set('n', '<leader>vl', function()
     lsp_lines_active = not lsp_lines_active
     update_virtual_text()

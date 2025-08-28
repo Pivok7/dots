@@ -29,7 +29,6 @@ require('lazy').setup({
     require 'plugins.treesitter',
     require 'plugins.telescope',
     require 'plugins.yazi', -- requires yazi to be installed on your system
-    require 'plugins.oil',
     require 'plugins.mason',
     require 'plugins.autocompletion',
     require 'plugins.indent-blankline',

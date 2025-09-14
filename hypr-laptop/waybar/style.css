@@ -1,49 +1,43 @@
 * {
-    min-height: 0;
-    font-family: IosevkaEtoile;
-    font-size: 14px;
+    border: none;
+    font-family: Iosevka;
+    font-size: 16px;
     font-weight: 500;
 }
 
 window#waybar {
     transition-property: background-color;
     transition-duration: 0.5s;
-    background-color: rgba(7, 8, 8, 0.8);
+    background-color: rgba(10, 12, 12, 0.80);
 }
 
 window#waybar.hidden {
     opacity: 0.5;
 }
 
-#workspaces {
+window#waybar.empty #window {
     background-color: transparent;
 }
 
 #workspaces button {
-    all: initial;
-    min-width: 0;
-    box-shadow: inset 0 -3px transparent;
     padding: 2px 10px;
-    min-height: 0;
-    margin: 4px 4px;
-    border-radius: 8px;
-    background-color: #172020;
-    color: #ccddcc;
+    border-radius: 10px;
+    margin: 4px 2px;
+    background-color: #202828;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    color: #172020;
+    color: #202828;
     background-color: #778877;
 }
 
 #workspaces button.active {
-    color: #172020;
+    color: #202828;
     background-color: #ccddcc;
 }
 
 #workspaces button.urgent {
+    color: #202828;
     background-color: #f38ba8;
 }
 
@@ -54,43 +48,29 @@ window#waybar.hidden {
 #pulseaudio#microphone,
 #custom-logo,
 #custom-power,
-#cpu,
+#custom-music-player,
 #tray,
-#memory,
 #window,
 
-#custom-gpu {
-    min-height: 0;
-    padding: 2px 10px;
-    border-radius: 8px;
-    margin: 4px 4px;
-    background-color: #172020;
+#custom-music-player {
+    padding: 2px 12px;
+    border-radius: 10px;
+    margin: 4px 2px;
+    background-color: #202828;
+}
+
+#custom-music-player.playing {
+    color: #ccddcc;
+}
+
+#custom-music-player.stopped {
+    color: transparent;
+    background-color: transparent;
 }
 
 #custom-sep {
     padding: 0px;
     color: #778877;
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
-}
-
-#cpu {
-    color: #ccddcc;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-#custom-gpu {
-    color: #ccddcc;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-#memory {
-    margin-left: 0;
-    color: #ccddcc;
 }
 
 #battery {
@@ -125,6 +105,10 @@ window#waybar.empty #window {
     color: #778877;
 }
 
+#custom-logo {
+    color: #ccddcc;
+}
+
 #custom-power {
     color: #f38ba8;
     padding-right: 5px;
@@ -134,7 +118,7 @@ window#waybar.empty #window {
 @keyframes blink {
     to {
         background-color: #f38ba8;
-        color: #172020;
+        color: #202828;
     }
 }
 
@@ -143,6 +127,6 @@ tooltip {
 }
 
 #tray menu {
-    background: rgb(24, 24, 37);
-    color: white;
+    background: #202828;
+    color: #ccddcc;
 }

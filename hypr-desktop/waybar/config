@@ -23,6 +23,7 @@
 	"pulseaudio#microphone",
         "clock#date",
         "clock",
+	"custom/sep",
         "tray",
 	"custom/sep",
 	"custom/power",
@@ -109,14 +110,6 @@
     "custom/sep": {
         "format": "|",
         "tooltip": false,
-    },
-
-    "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "enth {bandwidthDownBits}",
-        "format-disconnected" : "no network",
-        "interval": 5,
-        "tooltip": false
     },
 
     "custom/power": {

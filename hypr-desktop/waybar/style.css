@@ -41,8 +41,6 @@ window#waybar.empty #window {
     background-color: #f38ba8;
 }
 
-#battery,
-#backlight,
 #clock,
 #pulseaudio,
 #pulseaudio#microphone,

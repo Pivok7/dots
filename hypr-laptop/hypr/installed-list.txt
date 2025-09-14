@@ -2,12 +2,12 @@
 -hyprland
 -rofi
 -waybar
--hyprshot
 -hyprpaper
 -hyprlock
 -hypridle
 -hyprsunset
+-flameshot
 -wlogout
 -swaync
+-pcmanfm-qt
 -udiskie
--brightnessctl

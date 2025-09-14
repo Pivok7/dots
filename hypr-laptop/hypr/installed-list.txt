@@ -12,3 +12,4 @@
 -swaync
 -pcmanfm-qt
 -udiskie
+-dash

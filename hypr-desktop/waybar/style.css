@@ -61,6 +61,10 @@ window#waybar.empty #window {
     color: #ccddcc;
 }
 
+#custom-music-player.paused {
+    color: #ccddcc;
+}
+
 #custom-music-player.stopped {
     color: transparent;
     background-color: transparent;

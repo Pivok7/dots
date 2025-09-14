@@ -12,6 +12,11 @@
 	"custom/sep",
 	"hyprland/window"
     ],
+
+    "modules-center": [
+	"custom/music-player",
+    ],
+
     "modules-right": [
         "custom/sep",
         "pulseaudio",
@@ -22,6 +27,12 @@
 	"custom/sep",
 	"custom/power",
     ],
+
+    "custom/music-player": {
+	"format": "{}",
+	"return-type": "json",
+	"exec": "waybar-module-music --marquee -t 50 -d 5000",
+    },
 
     "wlr/workspaces": {
         "on-click": "activate",

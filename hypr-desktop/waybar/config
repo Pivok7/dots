@@ -1,42 +1,27 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
+    "height": 34,
     "spacing": 4,
     "exclusive": true,
     "passthrough": false,
     "fixed-center": true,
 
-    "modules-left": ["hyprland/workspaces", "custom/sep", "hyprland/window"],
-    "modules-center": ["custom/waybar-mpris"],
+    "modules-left": [
+	"hyprland/workspaces",
+	"custom/sep",
+	"hyprland/window"
+    ],
     "modules-right": [
         "custom/sep",
         "pulseaudio",
 	"pulseaudio#microphone",
-	"backlight",	
         "clock#date",
         "clock",
         "tray",
 	"custom/sep",
 	"custom/power",
     ],
-
-    "custom/waybar-mpris": {
-	"return-type": "json",
-	"exec": "waybar-mpris --position --autofocus --pause ⏸︎",
-	"on-click": "waybar-mpris --send toggle",
-	"escape": true,
-    },
-
-    "custom/music-player": {
-        "interval": 1,
-        "format": "{}",
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/music_player.sh grep",
-        "on-click": "~/.config/waybar/modules/music_player.sh previous",
-        "on-click-middle": "~/.config/waybar/modules/music_player.sh pause",
-        "on-click-right": "~/.config/waybar/modules/music_player.sh next",
-    },
 
     "wlr/workspaces": {
         "on-click": "activate",
@@ -58,12 +43,6 @@
     "tray": {
         "show-passive-items": false,
         "spacing": 12,
-    },
-    
-    "backlight": {
-	"device": "intel_backlight",
-	"format": "{percent}% {icon}",
-	"format-icons": ["", ""]
     },
 
     "clock": {

@@ -10,6 +10,5 @@
 -brightnessctl
 -wlogout
 -swaync
--pcmanfm-qt
 -udiskie
 -dash

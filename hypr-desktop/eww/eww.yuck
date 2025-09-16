@@ -1,0 +1,157 @@
+;###################
+;### main layout ###
+;###################
+
+(defwidget bar []
+    (centerbox
+	(workspaces)
+	(music)
+	(sidestuff)
+    )
+)
+
+;###############
+;### widgets ###
+;###############
+
+(defwidget workspaces []
+    (box
+	:class "workspaces"
+
+	:space-evenly false
+	:halign "left"
+	:spacing 6
+
+	(literal
+	    :content
+	    workspaces_layout
+	)
+	"|"
+	(window_title_bar)
+    )
+)
+
+(defwidget window_title_bar []
+    (box
+	:class "window_title"
+
+	(label
+	    :class {window_title == "" ? "empty" : "active"}
+	    :text window_title
+	)
+    )
+)
+
+(defwidget music []
+    (box
+	:class "music"
+	:space-evenly false
+	:halign "center"
+
+	{music != "" ? "🎵${music}" : ""}
+    )
+)
+
+(defwidget sidestuff []
+    (box
+	:class "sidestuff"
+
+	:space-evenly false
+	:halign "end"
+	:spacing 6
+	
+	(audio)
+	time
+	(session)
+    )
+)
+
+(defwidget audio []
+    (box
+	:class "audio"
+
+	(eventbox
+	    :onscroll "scripts/setvol.sh {}"
+	    "  ${volume}%"
+	)
+	
+    )
+)
+
+(defwidget session []
+    (box
+	:class "session"
+
+	(button
+	    :onclick "pgrep wlogout || wlogout &"
+	    ""
+	)
+    )
+)
+
+(defwidget metric [label value onchange]
+    (box
+	:class "metric"
+	:space-evenly false
+
+	(box
+	    :class "label" label
+	)
+	(scale
+	    :min 0
+	    :max 101
+	    :active {onchange != ""}
+	    :value value
+	    :onchange onchange
+	)
+    )
+)
+
+;#################
+;### variables ###
+;#################
+
+(deflisten workspaces_layout
+    `./scripts/workspaces/hyprland.sh`
+)
+
+(deflisten window_title
+    `./scripts/workspaces/hyprland_title.sh`
+)
+
+(deflisten music
+    :initial ""
+    "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true"
+)
+
+(deflisten volume
+    :initial "10"
+    "scripts/getvol.sh"
+)
+
+(defpoll time
+    :interval "10s"
+    "date '+%H:%M %b %d, %Y'"
+)
+
+;###############
+;### windows ###
+;###############
+
+(defwindow bar
+    :monitor 0
+    :windowtype "dock"
+
+    :geometry (geometry
+	:x "0%"
+        :y "0.5%"
+        :width "99.5%"
+        :height "3.3%"
+        :anchor "top center"
+    )
+
+    :reserve (struts :side "top" :distance "3.3%")
+    :exclusive true
+
+    (bar)
+)

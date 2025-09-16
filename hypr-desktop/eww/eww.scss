@@ -1,0 +1,91 @@
+* {
+  all: unset;
+  font-family: IosevkaEtoile;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+$background: #3a3a3a;
+$dark: #202828;
+$medium: #778877;
+$light: #ccddcc;
+
+// Global Styles
+.bar {
+  background-color: $background;
+  padding: 4px;
+  border-radius: 12px;
+  color: $light;
+}
+
+.workspaces .buttons button {
+  all: unset;
+  border-radius: 10px;
+  min-width: 33px;
+  color: $light;
+  background-color: $dark;
+}
+
+.workspaces .buttons button:hover {
+  color: $dark;
+  background-color: $medium;
+}
+
+.workspaces .buttons .active {
+  color: $dark;
+  background-color: $light;
+}
+
+.workspaces .window_title .empty {
+  all: unset;
+  color: transparent;
+  background-color: transparent;
+}
+
+.workspaces .window_title .active {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: $light;
+  background-color: $dark;
+}
+
+.audio {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.session button {
+  all: unset;
+  border-radius: 10px;
+  min-width: 33px;
+  color: $light;
+  background-color: $dark;
+}
+
+.session button:hover {
+  color: $dark;
+  background-color: $light;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  border-radius: 10px;
+  color: $dark;
+  background-color: $light;
+}
+
+.metric scale trough {
+  all: unset;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: $dark;
+}

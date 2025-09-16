@@ -44,11 +44,20 @@
 
 (defwidget music []
     (box
-	:class "music"
 	:space-evenly false
 	:halign "center"
 
-	{music != "" ? "🎵${music}" : ""}
+	(button
+	    :class {music_status == "Playing" ? "music"
+	    :music_status == "Paused"  ? "music"
+	    :"no_music"}
+	
+	    :onclick "playerctl play-pause"
+
+	    {music_status == "Playing" ? "󰝚  ${music}"
+	    :music_status == "Paused"  ? "󰝛  ${music}"
+	    :""}
+	)
     )
 )
 
@@ -61,28 +70,55 @@
 	:spacing 6
 	
 	(audio)
-	time
+	(mic)
+	(time_bar)
 	(session)
     )
 )
 
 (defwidget audio []
     (box
-	:class "audio"
-
 	(eventbox
-	    :onscroll "scripts/setvol.sh {}"
-	    "  ${volume}%"
+	    :onscroll "scripts/audio/setvol.sh {}"
+
+	    (button
+		:class "audio"
+
+		"  ${volume}%"
+	    )
 	)
 	
     )
 )
 
+(defwidget mic []
+    (box
+	(eventbox
+	    :onscroll "scripts/audio/setmic.sh {}"
+
+	    (button
+		:class "mic"
+		" ${mic_vol}%"
+	    )
+	)
+	
+    )
+)
+
+(defwidget time_bar []
+    (box
+	:class "time"
+
+	(label
+	    :text time
+	)
+    )
+)
+
 (defwidget session []
     (box
-	:class "session"
-
 	(button
+	    :class "session"
 	    :onclick "pgrep wlogout || wlogout &"
 	    ""
 	)
@@ -121,12 +157,21 @@
 
 (deflisten music
     :initial ""
-    "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true"
+    "playerctl --follow metadata --format '{{ title }}' || true"
+)
+
+(deflisten music_status
+    "playerctl --follow status"
 )
 
 (deflisten volume
-    :initial "10"
-    "scripts/getvol.sh"
+    :initial "0"
+    "scripts/audio/getvol.sh"
+)
+
+(deflisten mic_vol
+    :initial "0"
+    "scripts/audio/getmic.sh"
 )
 
 (defpoll time

@@ -51,7 +51,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.audio {
+.music {
   all: unset;
   border-radius: 10px;
   padding-left: 10px;
@@ -60,7 +60,41 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session button {
+.no_music {
+  all: unset;
+  color: transparent;
+  background-color: transparent;
+}
+
+.music:hover {
+  color: $dark;
+  background-color: $light;
+}
+
+.audio, .mic {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.audio:hover, .mic:hover {
+  color: $dark;
+  background-color: $light;
+}
+
+.time {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.session {
   all: unset;
   border-radius: 10px;
   min-width: 33px;
@@ -68,24 +102,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session button:hover {
+.session:hover {
   color: $dark;
   background-color: $light;
-}
-
-.metric scale trough highlight {
-  all: unset;
-  border-radius: 10px;
-  color: $dark;
-  background-color: $light;
-}
-
-.metric scale trough {
-  all: unset;
-  border-radius: 50px;
-  min-height: 3px;
-  min-width: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color: $dark;
 }

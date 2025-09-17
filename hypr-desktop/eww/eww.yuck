@@ -69,7 +69,6 @@
 	:halign "end"
 	:spacing 6
 	
-	(dummy) ; It's here only to make dummy variables work
 	(audio)
 	(mic)
 	(time_bar)
@@ -79,38 +78,30 @@
 
 (defwidget audio []
     (box
-	(eventbox
-	    :onscroll "scripts/audio/buffer_audio.sh vol {}"
+	(button
+	    :class {volume == -1 ? "audio_muted" : "audio"}
+	    :onclick "scripts/audio/mute.sh vol"
+	    :onrightclick "scripts/audio/settings.sh vol"
 
-	    (button
-		:class {volume == -1 ? "audio_muted" : "audio"}
-		:onclick "scripts/audio/mute.sh vol"
-		:onrightclick "scripts/audio/settings.sh vol"
-
-		{volume == -1 ?
-		    "  0%" :
-		    "  ${volume}%"
-		}
-	    )
+	    {volume == -1 ?
+		"  0%" :
+		"  ${volume}%"
+	    }
 	)
     )
 )
 
 (defwidget mic []
     (box
-	(eventbox
-	    :onscroll "scripts/audio/buffer_audio.sh mic {}"
+	(button
+	    :class {mic_vol == -1 ? "mic_muted" : "mic"}
+	    :onclick "scripts/audio/mute.sh mic"
+	    :onrightclick "scripts/audio/settings.sh mic"
 
-	    (button
-		:class {mic_vol == -1 ? "mic_muted" : "mic"}
-		:onclick "scripts/audio/mute.sh mic"
-		:onrightclick "scripts/audio/settings.sh mic"
-
-		{mic_vol == -1 ?
-		    "  0%" :
-		    "  ${mic_vol}%"
-		}
-	    )
+	    {mic_vol == -1 ?
+		"  0%" :
+		"  ${mic_vol}%"
+	    }
 	)
     )
 )
@@ -135,25 +126,17 @@
     )
 )
 
-; This is to keep dummy variables alive
-(defwidget dummy []
-    (box
-	:class "dummy"
-
-	(label :text _eww_audio)
-    )
-)
-
 ;#################
 ;### variables ###
 ;#################
 
 (deflisten workspaces_layout
-    `./scripts/workspaces/hyprland.sh`
+    "scripts/workspaces/hyprland.sh"
 )
 
 (deflisten window_title
-    `./scripts/workspaces/hyprland_title.sh`
+    :initial ""
+    "scripts/workspaces/hyprland_title.sh"
 )
 
 (deflisten music
@@ -178,12 +161,6 @@
 (defpoll time
     :interval "10s"
     "date '+%H:%M %b %d, %Y'"
-)
-
-; Dummy variable
-(deflisten _eww_audio
-    :interval "0.1s"
-    "scripts/audio/eww_audio.sh"
 )
 
 ;###############

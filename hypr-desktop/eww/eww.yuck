@@ -81,7 +81,6 @@
     (box
 	(eventbox
 	    :onscroll "scripts/audio/buffer_vol.sh {}"
-
 	    (button
 		:class "audio"
 		:onclick "scripts/audio/mute_vol.sh"
@@ -195,13 +194,13 @@
 
 ; Dummy variable
 (defpoll _process_vol
-    :interval "0.2s"
+    :interval "0.1s"
     "scripts/audio/process_vol.sh"
 )
 
 ; Dummy variable
 (defpoll _process_mic
-    :interval "1.0s"
+    :interval "0.1s"
     "scripts/audio/process_mic.sh"
 )
 

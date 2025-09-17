@@ -81,14 +81,18 @@
     (box
 	(eventbox
 	    :onscroll "scripts/audio/buffer_audio.sh vol {}"
-	    (button
-		:class "audio"
-		:onclick "scripts/audio/mute_vol.sh"
 
-		"  ${volume}%"
+	    (button
+		:class {volume == -1 ? "audio_muted" : "audio"}
+		:onclick "scripts/audio/mute.sh vol"
+		:onrightclick "scripts/audio/settings.sh vol"
+
+		{volume == -1 ?
+		    "  0%" :
+		    "  ${volume}%"
+		}
 	    )
 	)
-	
     )
 )
 
@@ -98,13 +102,16 @@
 	    :onscroll "scripts/audio/buffer_audio.sh mic {}"
 
 	    (button
-		:class "mic"
-		:onclick "scripts/audio/mute_mic.sh"
+		:class {mic_vol == -1 ? "mic_muted" : "mic"}
+		:onclick "scripts/audio/mute.sh mic"
+		:onrightclick "scripts/audio/settings.sh mic"
 
-		" ${mic_vol}%"
+		{mic_vol == -1 ?
+		    "  0%" :
+		    "  ${mic_vol}%"
+		}
 	    )
 	)
-	
     )
 )
 
@@ -124,24 +131,6 @@
 	    :class "session"
 	    :onclick "pgrep wlogout || wlogout &"
 	    ""
-	)
-    )
-)
-
-(defwidget metric [label value onchange]
-    (box
-	:class "metric"
-	:space-evenly false
-
-	(box
-	    :class "label" label
-	)
-	(scale
-	    :min 0
-	    :max 101
-	    :active {onchange != ""}
-	    :value value
-	    :onchange onchange
 	)
     )
 )

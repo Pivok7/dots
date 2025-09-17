@@ -33,17 +33,17 @@ while :; do
 
     if ((VOL_COUNTER != 0)); then
 	if ((VOL_COUNTER > 0)); then
-	    ./set_vol.sh "up" "$VOL_COUNTER"
+	    ./set.sh "vol" "up" "$VOL_COUNTER"
 	else
-	    ./set_vol.sh "down" "$((-VOL_COUNTER))"
+	    ./set.sh "vol" "down" "$((-VOL_COUNTER))"
 	fi
     fi
 
     if ((MIC_COUNTER != 0)); then
 	if ((MIC_COUNTER > 0)); then
-	    ./set_mic.sh "up" "$MIC_COUNTER"
+	    ./set.sh "mic" "up" "$MIC_COUNTER"
 	else
-	    ./set_mic.sh "down" "$((-MIC_COUNTER))"
+	    ./set.sh "mic" "down" "$((-MIC_COUNTER))"
 	fi
     fi
 

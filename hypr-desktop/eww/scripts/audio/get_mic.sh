@@ -1,12 +1,18 @@
 #!/bin/sh
 
-pactlvol() {
-    pactl get-source-volume @DEFAULT_SOURCE@\
-    | grep -o '[0-9]\+%'\
-    | tr -d '%'
+pulsevol() {
+    mute=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
+
+    if [ "$mute" == "yes" ]; then
+	echo "-1"
+    else
+	pactl get-source-volume @DEFAULT_SOURCE@\
+	| grep -o '[0-9]\+%'\
+	| tr -d '%'
+    fi
 }
 
-amixervol() {
+alsavol() {
     amixer get Capture\
     | grep -i 'Front Left:'\
     | awk -F'[][]' '{print $2}'\
@@ -17,7 +23,7 @@ amixervol() {
 pulseaudio() {
     pactl subscribe sink | while read -r line; do
 	if echo "$line" | grep -q "change"; then
-	    pactlvol
+	    pulsevol
 	fi
     done
 }
@@ -25,13 +31,13 @@ pulseaudio() {
 # Last resort. Polling amixer
 alsa() {
     while true; do
-	amixervol
+	alsavol
 	sleep 0.2
     done
 }
 
 if command -v pactl &> /dev/null; then
-    pactlvol
+    pulsevol
     pulseaudio
 else
     alsa

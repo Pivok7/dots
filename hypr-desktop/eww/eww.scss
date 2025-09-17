@@ -80,7 +80,16 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.audio:hover, .mic:hover {
+.audio_muted, .mic_muted {
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $medium;
+  background-color: $dark;
+}
+
+.audio:hover, .audio_muted:hover,
+.mic:hover, .mic_muted:hover {
   color: $dark;
   background-color: $light;
 }

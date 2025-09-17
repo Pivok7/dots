@@ -80,7 +80,7 @@
 (defwidget audio []
     (box
 	(eventbox
-	    :onscroll "scripts/audio/buffer_vol.sh {}"
+	    :onscroll "scripts/audio/buffer_audio.sh vol {}"
 	    (button
 		:class "audio"
 		:onclick "scripts/audio/mute_vol.sh"
@@ -95,7 +95,7 @@
 (defwidget mic []
     (box
 	(eventbox
-	    :onscroll "scripts/audio/buffer_mic.sh {}"
+	    :onscroll "scripts/audio/buffer_audio.sh mic {}"
 
 	    (button
 		:class "mic"
@@ -151,8 +151,7 @@
     (box
 	:class "dummy"
 
-	(label :text _process_vol)
-	(label :text _process_mic)
+	(label :text _eww_audio)
     )
 )
 
@@ -193,15 +192,9 @@
 )
 
 ; Dummy variable
-(defpoll _process_vol
+(deflisten _eww_audio
     :interval "0.1s"
-    "scripts/audio/process_vol.sh"
-)
-
-; Dummy variable
-(defpoll _process_mic
-    :interval "0.1s"
-    "scripts/audio/process_mic.sh"
+    "scripts/audio/eww_audio.sh"
 )
 
 ;###############

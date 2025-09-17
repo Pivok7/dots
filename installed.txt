@@ -12,4 +12,6 @@
 -wlogout
 -swaync
 -udiskie
+-eww
+  -socat
 -dash

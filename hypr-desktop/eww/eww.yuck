@@ -69,6 +69,7 @@
 	:halign "end"
 	:spacing 6
 	
+	(dummy) ; It's here only to make dummy variables work
 	(audio)
 	(mic)
 	(time_bar)
@@ -79,10 +80,11 @@
 (defwidget audio []
     (box
 	(eventbox
-	    :onscroll "scripts/audio/setvol.sh {}"
+	    :onscroll "scripts/audio/buffer_vol.sh {}"
 
 	    (button
 		:class "audio"
+		:onclick "scripts/audio/mute_vol.sh"
 
 		"  ${volume}%"
 	    )
@@ -94,10 +96,12 @@
 (defwidget mic []
     (box
 	(eventbox
-	    :onscroll "scripts/audio/setmic.sh {}"
+	    :onscroll "scripts/audio/buffer_mic.sh {}"
 
 	    (button
 		:class "mic"
+		:onclick "scripts/audio/mute_mic.sh"
+
 		" ${mic_vol}%"
 	    )
 	)
@@ -143,6 +147,16 @@
     )
 )
 
+; This is to keep dummy variables alive
+(defwidget dummy []
+    (box
+	:class "dummy"
+
+	(label :text _process_vol)
+	(label :text _process_mic)
+    )
+)
+
 ;#################
 ;### variables ###
 ;#################
@@ -166,17 +180,29 @@
 
 (deflisten volume
     :initial "0"
-    "scripts/audio/getvol.sh"
+    "scripts/audio/get_vol.sh"
 )
 
 (deflisten mic_vol
     :initial "0"
-    "scripts/audio/getmic.sh"
+    "scripts/audio/get_mic.sh"
 )
 
 (defpoll time
     :interval "10s"
     "date '+%H:%M %b %d, %Y'"
+)
+
+; Dummy variable
+(defpoll _process_vol
+    :interval "0.2s"
+    "scripts/audio/process_vol.sh"
+)
+
+; Dummy variable
+(defpoll _process_mic
+    :interval "1.0s"
+    "scripts/audio/process_mic.sh"
 )
 
 ;###############

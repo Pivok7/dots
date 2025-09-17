@@ -106,3 +106,9 @@ $light: #ccddcc;
   color: $dark;
   background-color: $light;
 }
+
+.dummy {
+  all: unset;
+  color: transparent;
+  background-color: transparent;
+}

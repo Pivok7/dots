@@ -47,16 +47,30 @@
 	:space-evenly false
 	:halign "center"
 
+	:class {music_status == "Playing" ? "music"
+	    : music_status == "Paused"  ? "music_paused"
+	    : "no_music"
+	}
+
 	(button
-	    :class {music_status == "Playing" ? "music"
-	    :music_status == "Paused"  ? "music"
-	    :"no_music"}
-	
-	    :onclick "playerctl play-pause"
+	    :class "music_bar"	
+	    :onclick "scripts/audio/player.sh play-pause"
 
 	    {music_status == "Playing" ? "󰝚  ${music}"
 	    :music_status == "Paused"  ? "󰝛  ${music}"
 	    :""}
+	)
+
+	(button
+	    :class "music_prev"
+	    :onclick "scripts/audio/player.sh previous"
+	    ""
+	)
+
+	(button
+	    :class "music_next"
+	    :onclick "scripts/audio/player.sh next"
+	    ""
 	)
     )
 )

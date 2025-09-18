@@ -54,21 +54,72 @@ $light: #ccddcc;
 .music {
   all: unset;
   border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
   color: $light;
   background-color: $dark;
+
+  .music_bar {
+    all: unset;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: $light;
+    background-color: $dark;
+  }
+
+  .music_next, .music_prev {
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: $light;
+    background-color: $dark;
+  }
+}
+
+.music_paused {
+  all: unset;
+  border-radius: 10px;
+  color: $light;
+  background-color: $dark;
+
+  .music_bar {
+    all: unset;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: $medium;
+    background-color: $dark;
+  }
+
+  .music_next, .music_prev {
+    all: unset;
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: $medium;
+    background-color: $dark;
+  }
+}
+
+.music_bar:hover {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $dark;
+  background-color: $light;
+}
+
+.music_next:hover, .music_prev:hover {
+  padding-left: 6px;
+  padding-right: 6px;
+  color: $dark;
+  background-color: $light;
 }
 
 .no_music {
   all: unset;
   color: transparent;
   background-color: transparent;
-}
-
-.music:hover {
-  color: $dark;
-  background-color: $light;
 }
 
 .audio, .mic {

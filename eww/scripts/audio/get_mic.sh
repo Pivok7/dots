@@ -3,20 +3,33 @@
 pulsevol() {
     mute=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
 
-    if [ "$mute" == "yes" ]; then
-	echo "-1"
-    else
-	pactl get-source-volume @DEFAULT_SOURCE@\
-	| grep -o '[0-9]\+%'\
+    val=$(
+	pactl get-source-volume @DEFAULT_SOURCE@ \
+	| grep -o '[0-9]\+%' \
+	| head -n1 \
 	| tr -d '%'
+    )
+
+    if [ "$mute" = "yes" ]; then
+	echo "-$val"
+    else
+	echo "$val"
     fi
 }
 
 alsavol() {
-    amixer get Capture\
-    | grep -i 'Front Left:'\
-    | awk -F'[][]' '{print $2}'\
-    | tr -d '%'
+    vol=$(
+	amixer get Capture\
+	| grep -i 'Front Left:'\
+	| awk -F'[][]' '{print $2}'\
+	| tr -d '%'
+    )
+
+    if echo "$(amixer get Capture)" | grep -q "\[off\]"; then
+	echo "-$vol"
+    else
+	echo "$vol"
+    fi
 }
 
 # PulseAudio or pipewire-pulse
@@ -32,7 +45,7 @@ pulseaudio() {
 alsa() {
     while true; do
 	alsavol
-	sleep 0.2
+	sleep 1
     done
 }
 

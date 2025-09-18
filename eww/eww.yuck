@@ -73,10 +73,7 @@
 	(mic)
 	;(battery)
 	(time_bar)
-	(systray
-	    :class "systray"
-	    :spacing 6
-	)
+	(tray)
 	(session)
     )
 )
@@ -84,12 +81,12 @@
 (defwidget audio []
     (box
 	(button
-	    :class {volume == -1 ? "audio_muted" : "audio"}
+	    :class {volume < 0 ? "audio_muted" : "audio"}
 	    :onclick "scripts/audio/mute.sh vol"
 	    :onrightclick "scripts/audio/settings.sh vol"
 
-	    {volume == -1 ?
-		"  0%" :
+	    {volume < 0 ?
+		"󰖁  ${-volume}%" :
 		"  ${volume}%"
 	    }
 	)
@@ -99,12 +96,12 @@
 (defwidget mic []
     (box
 	(button
-	    :class {mic_vol == -1 ? "mic_muted" : "mic"}
+	    :class {mic_vol < 0 ? "mic_muted" : "mic"}
 	    :onclick "scripts/audio/mute.sh mic"
 	    :onrightclick "scripts/audio/settings.sh mic"
 
-	    {mic_vol == -1 ?
-		"  0%" :
+	    {mic_vol < 0 ?
+		"󰍭  ${-mic_vol}%" :
 		"  ${mic_vol}%"
 	    }
 	)
@@ -127,11 +124,11 @@
 	(label
 	    :text "${status == 'Charging' ?
 	    (
-		charge <= 10 ? '󰢜 ' : charge <= 20 ? '󰂆 ' :
-		charge <= 30 ? '󰂇 ' : charge <= 40 ? '󰂈 ' :
-		charge <= 50 ? '󰢝 ' : charge <= 60 ? '󰂉 ' :
-		charge <= 70 ? '󰢞 ' : charge <= 80 ? '󰂊 ' :
-		charge <= 90 ? '󰂋 ' : '󰂅 '
+		charge <= 10 ? '󰢜' : charge <= 20 ? '󰂆' :
+		charge <= 30 ? '󰂇' : charge <= 40 ? '󰂈' :
+		charge <= 50 ? '󰢝' : charge <= 60 ? '󰂉' :
+		charge <= 70 ? '󰢞' : charge <= 80 ? '󰂊' :
+		charge <= 90 ? '󰂋' : '󰂅'
 	    ) : (
 		charge <= 10 ? '󰁺' : charge <= 20 ? '󰁻' :
 		charge <= 30 ? '󰁼' : charge <= 40 ? '󰁽' :
@@ -140,6 +137,13 @@
 		charge <= 90 ? '󰂂' : '󰁹'
 	    )
 	} ${charge}%")
+    )
+)
+
+(defwidget tray []
+    (systray
+	:class "systray"
+	:spacing 6
     )
 )
 
@@ -197,7 +201,7 @@
 
 (defpoll time
     :interval "10s"
-    "date '+%H:%M %b %d, %Y'"
+    "date '+%H:%M, %d %b %Y'"
 )
 
 ;###############

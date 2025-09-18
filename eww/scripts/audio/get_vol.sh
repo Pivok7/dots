@@ -3,21 +3,30 @@
 pulsevol() {
     mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 
-    if [ "$mute" == "yes" ]; then
-	echo "-1"
-    else
-	pactl get-sink-volume @DEFAULT_SINK@\
-	| grep -o '[0-9]\+%'\
+    val=$(
+	pactl get-sink-volume @DEFAULT_SINK@ \
+	| grep -o '[0-9]\+%' \
+	| head -n1 \
 	| tr -d '%'
+    )
+
+    if [ "$mute" = "yes" ]; then
+	echo "-$val"
+    else
+	echo "$val"
     fi
 }
 
 alsavol() {
-    if echo "$(amixer get Master)" | grep -q "\[off\]"; then
-	echo "-1"
-    else
+    vol=$(
 	amixer -D pulse sget Master \
 	| awk -F '[^0-9]+' '/Left:/{print $3}'
+    )
+
+    if echo "$(amixer get Master)" | grep -q "\[off\]"; then
+	echo "-$vol"
+    else
+	echo "$vol"
     fi
 }
 
@@ -34,7 +43,7 @@ pulseaudio() {
 alsa() {
     while true; do
 	alsavol
-	sleep 0.2
+	sleep 1
     done
 }
 

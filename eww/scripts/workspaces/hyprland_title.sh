@@ -10,7 +10,7 @@ socat -U - UNIX-CONNECT:"$SOCKET" 2>&1 | while read -r line; do
     case $line in
         "activewindow>>"*)
             title
-            ;;
+	;;
     esac
 done
 

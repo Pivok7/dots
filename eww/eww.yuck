@@ -71,7 +71,12 @@
 	
 	(audio)
 	(mic)
+	;(battery)
 	(time_bar)
+	(systray
+	    :class "systray"
+	    :spacing 6
+	)
 	(session)
     )
 )
@@ -102,6 +107,16 @@
 		"  0%" :
 		"  ${mic_vol}%"
 	    }
+	)
+    )
+)
+
+(defwidget battery []
+    (box
+	:class "battery"
+
+	(label
+	    :text "Battery: ${EWW_BATTERY["BAT0"].capacity}%"
 	)
     )
 )
@@ -173,8 +188,8 @@
 
     :geometry (geometry
 	:x "0%"
-        :y "0.5%"
-        :width "99.5%"
+        :y "0%"
+        :width "100%"
         :height "3.3%"
         :anchor "top center"
     )

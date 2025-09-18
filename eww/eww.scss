@@ -5,7 +5,7 @@
   font-weight: 500;
 }
 
-$background: #3a3a3a;
+$background: rgba(0.1, 0.12, 0.12, 0.4);
 $dark: #202828;
 $medium: #778877;
 $light: #ccddcc;
@@ -14,7 +14,7 @@ $light: #ccddcc;
 .bar {
   background-color: $background;
   padding: 4px;
-  border-radius: 12px;
+  border-radius: 0px;
   color: $light;
 }
 
@@ -92,6 +92,58 @@ $light: #ccddcc;
 .mic:hover, .mic_muted:hover {
   color: $dark;
   background-color: $light;
+}
+
+.battery {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
+}
+
+.systray {
+  all: unset;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: $light;
+  background-color: $dark;
+
+  menuitem {
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: $light;
+    background-color: $dark;
+  }
+
+  menuitem:hover {
+    color: $dark;
+    background-color: $light;
+  }
+
+  menuitem:disabled label {
+    color: $medium;
+    background-color: $dark;
+  }
+
+  separator {
+    min-height: 1px;
+    color: $medium;
+    background-color: $light;
+  }
+}
+
+.systray menu {
+  all: unset;
+  padding-top: 10px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $light;
+  background-color: $dark;
 }
 
 .time {

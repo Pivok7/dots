@@ -19,10 +19,15 @@ ws() {
 	| awk '{print $NF}'\
     )
 
-    buttons=$(\
+    work_nums=$(\
 	hyprctl workspaces\
 	| grep -o 'workspace ID [0-9]\+'\
-	| awk '{print $NF}'\
+	| awk '{print $NF}'
+    )
+
+    buttons=$(
+	echo "$work_nums"\
+	| sort -n\
 	| while read num; do
 	    button="(button :class '%s' :onclick '$workspace_change %d' '%d') "
 	    if [ "$num" = "$current_workspace" ]; then
@@ -37,7 +42,7 @@ ws() {
     echo "$output"
 }
 
-echo "${prefix}(button :class 'active' :onclick '$workspace_change 1' 1))"
+ws
 
 HYPRLAND_SIGNATURE_ACTUAL=$(ls -td /run/user/1000/hypr/*/ | head -n1 | xargs basename)
 SOCKET="/run/user/1000/hypr/${HYPRLAND_SIGNATURE_ACTUAL}/.socket2.sock"
@@ -49,4 +54,3 @@ socat -U - UNIX-CONNECT:"$SOCKET" 2>&1 | while read -r line; do
         ;;
     esac
 done
-

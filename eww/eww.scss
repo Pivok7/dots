@@ -5,7 +5,7 @@
   font-weight: 500;
 }
 
-$background: rgba(0.1, 0.12, 0.12, 0.4);
+$background: #3a3a3a;
 $dark: #202828;
 $medium: #778877;
 $light: #ccddcc;
@@ -113,8 +113,9 @@ $light: #ccddcc;
 
   menuitem {
     border-radius: 10px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     color: $light;
     background-color: $dark;
   }
@@ -131,6 +132,7 @@ $light: #ccddcc;
 
   separator {
     min-height: 1px;
+    margin: 5px;
     color: $medium;
     background-color: $light;
   }
@@ -138,15 +140,13 @@ $light: #ccddcc;
 
 .systray menu {
   all: unset;
-  padding-top: 10px;
   border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 4px;
   color: $light;
   background-color: $dark;
 }
 
-.time {
+.time, .battery {
   all: unset;
   border-radius: 10px;
   padding-left: 10px;
@@ -166,10 +166,4 @@ $light: #ccddcc;
 .session:hover {
   color: $dark;
   background-color: $light;
-}
-
-.dummy {
-  all: unset;
-  color: transparent;
-  background-color: transparent;
 }

@@ -115,9 +115,31 @@
     (box
 	:class "battery"
 
-	(label
-	    :text "Battery: ${EWW_BATTERY["BAT0"].capacity}%"
+	(_battery
+            :charge {EWW_BATTERY["BAT0"].capacity}
+	    :status {EWW_BATTERY["BAT0"].status}
 	)
+    )
+)
+
+(defwidget _battery [charge status]
+    (box
+	(label
+	    :text "${status == 'Charging' ?
+	    (
+		charge <= 10 ? '󰢜 ' : charge <= 20 ? '󰂆 ' :
+		charge <= 30 ? '󰂇 ' : charge <= 40 ? '󰂈 ' :
+		charge <= 50 ? '󰢝 ' : charge <= 60 ? '󰂉 ' :
+		charge <= 70 ? '󰢞 ' : charge <= 80 ? '󰂊 ' :
+		charge <= 90 ? '󰂋 ' : '󰂅 '
+	    ) : (
+		charge <= 10 ? '󰁺' : charge <= 20 ? '󰁻' :
+		charge <= 30 ? '󰁼' : charge <= 40 ? '󰁽' :
+		charge <= 50 ? '󰁾' : charge <= 60 ? '󰁿' :
+		charge <= 70 ? '󰂀' : charge <= 80 ? '󰂁' :
+		charge <= 90 ? '󰂂' : '󰁹'
+	    )
+	} ${charge}%")
     )
 )
 

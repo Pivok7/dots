@@ -5,6 +5,7 @@
   font-weight: 500;
 }
 
+$overlay: rgba(0, 0, 0, 0.3);
 $background: #3a3a3a;
 $dark: #202828;
 $medium: #778877;
@@ -207,7 +208,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session {
+.session, .dashboard_button {
   all: unset;
   border-radius: 10px;
   min-width: 33px;
@@ -215,7 +216,33 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session:hover {
+.session:hover, .dashboard_button:hover {
   color: $dark;
   background-color: $light;
+}
+
+
+.dashboard {
+  all: unset;
+  background-color: $overlay;
+  padding: 4px;
+  color: $light;
+}
+
+.dash_main {
+  padding: 100px 160px 160px 160px;
+
+  .dash_button {
+    all: unset;
+    border-radius: 10px;
+    color: $light;
+    background-color: $dark;
+  }
+
+  .dash_button:hover {
+    all: unset;
+    border-radius: 10px;
+    color: $dark;
+    background-color: $light;
+  }
 }

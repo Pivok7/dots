@@ -5,7 +5,7 @@
   font-weight: 500;
 }
 
-$overlay: rgba(0, 0, 0, 0.3);
+$opaque: rgba(12, 12, 12, 0.6);
 $background: #3a3a3a;
 $dark: #202828;
 $medium: #778877;
@@ -224,7 +224,7 @@ $light: #ccddcc;
 
 .dashboard {
   all: unset;
-  background-color: $overlay;
+  background-color: $opaque;
   padding: 4px;
   color: $light;
 }

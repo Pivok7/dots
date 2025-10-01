@@ -18,7 +18,8 @@ vim.lsp.enable({
     'zls',
     'rust-analyzer',
     'pyright',
-    'ts_ls',
+    'biome',
+    'tailwindcss',
 })
 
 require('lazy').setup({

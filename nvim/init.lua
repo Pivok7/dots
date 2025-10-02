@@ -1,5 +1,6 @@
 require 'core.options'
 require 'core.keymaps'
+require 'core.lsp'
 
 -- Lazy plugin
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -12,16 +13,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.lsp.enable({
-    'lua-language-server',
-    'clangd',
-    'zls',
-    'rust-analyzer',
-    'pyright',
-    'biome',
-    'tailwindcss',
-})
-
 require('lazy').setup({
     require 'plugins.colortheme',
     require 'plugins.themery',
@@ -30,7 +21,7 @@ require('lazy').setup({
     require 'plugins.treesitter',
     require 'plugins.telescope',
     require 'plugins.yazi', -- requires yazi to be installed on your system
-    require 'plugins.mason',
+    require 'plugins.lsp',
     require 'plugins.autocompletion',
     require 'plugins.indent-blankline',
     require 'plugins.misc',

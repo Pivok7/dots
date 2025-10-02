@@ -11,7 +11,7 @@ pulsevol() {
     )
 
     if [ "$mute" = "yes" ]; then
-	echo "$(( -$val - 1 ))"
+	echo "$(( -val - 1 ))"
     else
 	echo "$val"
     fi
@@ -23,8 +23,8 @@ alsavol() {
 	| awk -F '[^0-9]+' '/Left:/{print $3}'
     )
 
-    if echo "$(amixer get Master)" | grep -q "\[off\]"; then
-	echo "$(( -$val - 1 ))"
+    if "$(amixer get Master)" | grep -q "\[off\]"; then
+	echo "$(( -val - 1 ))"
     else
 	echo "$vol"
     fi
@@ -47,7 +47,7 @@ alsa() {
     done
 }
 
-if command -v pactl &> /dev/null; then
+if command -v pactl >/dev/null 2>&1; then
     pulsevol
     pulseaudio
 else

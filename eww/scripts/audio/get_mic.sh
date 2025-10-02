@@ -11,7 +11,7 @@ pulsevol() {
     )
 
     if [ "$mute" = "yes" ]; then
-	echo "$(( -$val - 1 ))"
+	echo "$(( -val - 1 ))"
     else
 	echo "$val"
     fi
@@ -25,8 +25,8 @@ alsavol() {
 	| tr -d '%'
     )
 
-    if echo "$(amixer get Capture)" | grep -q "\[off\]"; then
-	echo "$(( -$val - 1 ))"
+    if "$(amixer get Capture)" | grep -q "\[off\]"; then
+	echo "$(( -val - 1 ))"
     else
 	echo "$vol"
     fi
@@ -49,7 +49,7 @@ alsa() {
     done
 }
 
-if command -v pactl &> /dev/null; then
+if command -v pactl >/dev/null 2>&1; then
     pulsevol
     pulseaudio
 else

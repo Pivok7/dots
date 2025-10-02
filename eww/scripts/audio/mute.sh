@@ -2,7 +2,7 @@
 
 vol() {
     # Pipewire + Wireplumber
-    if command -v wpctl &> /dev/null; then
+    if command -v wpctl >/dev/null 2>&1; then
 	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
     # Fall back to ALSA
     else
@@ -12,7 +12,7 @@ vol() {
 
 mic() {
     # Pipewire + Wireplumber
-    if command -v wpctl &> /dev/null; then
+    if command -v wpctl >/dev/null 2>&1; then
 	wpctl set-mute @DEFAULT_SOURCE@ toggle
     # Fall back to ALSA
     else

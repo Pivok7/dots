@@ -122,7 +122,7 @@
 	    :onrightclick "scripts/audio/settings.sh vol"
 
 	    {volume < 0 ?
-		"󰖁  ${-volume}%" :
+		"󰖁  ${-volume - 1}%" :
 		"  ${volume}%"
 	    }
 	)
@@ -137,7 +137,7 @@
 	    :onrightclick "scripts/audio/settings.sh mic"
 
 	    {mic_vol < 0 ?
-		"󰍭  ${-mic_vol}%" :
+		"󰍭  ${-mic_vol - 1}%" :
 		"  ${mic_vol}%"
 	    }
 	)

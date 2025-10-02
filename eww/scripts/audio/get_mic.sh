@@ -11,7 +11,7 @@ pulsevol() {
     )
 
     if [ "$mute" = "yes" ]; then
-	echo "-$val"
+	echo "$(( -$val - 1 ))"
     else
 	echo "$val"
     fi
@@ -26,7 +26,7 @@ alsavol() {
     )
 
     if echo "$(amixer get Capture)" | grep -q "\[off\]"; then
-	echo "-$vol"
+	echo "$(( -$val - 1 ))"
     else
 	echo "$vol"
     fi

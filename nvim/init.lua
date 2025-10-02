@@ -22,6 +22,7 @@ require('lazy').setup({
     require 'plugins.telescope',
     require 'plugins.yazi', -- requires yazi to be installed on your system
     require 'plugins.lsp',
+    require 'plugins.formatter',
     require 'plugins.autocompletion',
     require 'plugins.indent-blankline',
     require 'plugins.misc',

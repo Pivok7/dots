@@ -7,10 +7,12 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 rust = { "rustfmt", lsp_format = "fallback" },
+		zig = { "zigfmt" },
 
                 html = { "prettier" },
                 css = { "prettier" },
                 javascript = { "prettier" },
+                typescript = { "prettier" },
             },
         })
 

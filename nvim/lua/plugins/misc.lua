@@ -1,6 +1,13 @@
 -- Standalone plugins that are not essential
 return {
     {
+	"asiryk/auto-hlsearch.nvim",
+
+	config = function()
+	    require("auto-hlsearch").setup()
+	end
+    },
+    {
 	-- Hints keybinds
 	'folke/which-key.nvim',
 	opts = {

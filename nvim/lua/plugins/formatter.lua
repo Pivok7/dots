@@ -6,6 +6,8 @@ return {
         conform.setup({
             formatters_by_ft = {
                 lua = { "stylua" },
+		c = { "clang_format" },
+		cpp = { "clang_format" },
                 rust = { "rustfmt", lsp_format = "fallback" },
 		zig = { "zigfmt" },
 
@@ -18,6 +20,10 @@ return {
 
         conform.formatters.stylua = {
             append_args = { "--indent-type", "Spaces", "--indent-width", "4" },
+        }
+
+        conform.formatters.clang_format = {
+            append_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
         }
 
         conform.formatters.prettier = {

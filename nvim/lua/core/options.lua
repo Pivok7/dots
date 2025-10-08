@@ -16,7 +16,6 @@ vim.o.swapfile = false -- Creates a swapfile
 vim.o.fileencoding = 'utf-8' -- The encoding written to a file
 vim.o.termguicolors = true -- Set termguicolors to enable highlight groups
 vim.o.winborder = "rounded"
-vim.o.cmdheight = 0
 
 vim.diagnostic.config({ virtual_text = true }) -- Required for LSP messages
 vim.diagnostic.config({ virtual_lines = false }) -- Use virtual lines

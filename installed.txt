@@ -1,14 +1,12 @@
--kitty
 -hyprland
+-kitty
 -rofi
--waybar
 -hyprpaper
 -hyprlock
 -hypridle
 -hyprsunset
 -flameshot
 -brightnessctl (optional)
--waybar-module-music (https://github.com/Andeskjerf/waybar-module-music)
 -wlogout
 -swaync
 -udiskie

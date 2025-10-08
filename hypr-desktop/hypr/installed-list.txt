@@ -1,0 +1,11 @@
+-kitty
+-hyprland
+-rofi
+-hyprpaper
+-hyprlock
+-hypridle
+-hyprsunset
+-flameshot
+-wlogout
+-swaync
+-udiskie

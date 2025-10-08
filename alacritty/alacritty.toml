@@ -1,0 +1,13 @@
+[window]
+
+opacity = 0.9
+
+[terminal.shell]
+
+program = "nu"
+
+[font]
+
+normal.family = "Iosevka"
+
+size = 18.0

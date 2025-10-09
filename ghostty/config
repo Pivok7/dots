@@ -2,13 +2,12 @@ font-family = Iosevka
 font-family-bold = Iosevka Semibold
 font-size = 18
 
-window-inherit-working-directory = true
-confirm-close-surface = false
 command = nu
+confirm-close-surface = false
 
 theme = Rose Pine
-window-theme = dark
 background-opacity = 0.95
+
 gtk-custom-css = ./style.css
 gtk-wide-tabs = false
 window-decoration = server

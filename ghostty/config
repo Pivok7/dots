@@ -6,8 +6,9 @@ window-inherit-working-directory = true
 confirm-close-surface = false
 command = nu
 
-theme = Kitty Default
+theme = Rose Pine
 window-theme = dark
-background-opacity = 0.9
+background-opacity = 0.95
 gtk-custom-css = ./style.css
 gtk-wide-tabs = false
+window-decoration = server

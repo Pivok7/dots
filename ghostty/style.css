@@ -1,10 +1,9 @@
 tabbar tabbox {
-  margin: 0;
-  padding: 0;
-  min-height: 32px;
+    margin: 0;
+    padding: 0;
 }
 
 tabbar tabbox tab label {
-  font-family: Iosevka;
-  font-size: 22px;
+    font-family: Iosevka;
+    font-size: 20px;
 }

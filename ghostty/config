@@ -4,6 +4,7 @@ font-size = 18
 
 command = nu
 confirm-close-surface = false
+mouse-scroll-multiplier = 1
 
 theme = Rose Pine
 background-opacity = 0.95

@@ -36,7 +36,7 @@ mic() {
     fi
 }
 
-if [ "$#" -eq 2 ]; then
+if [ "$#" -eq 3 ]; then
     case "$1" in
 	"vol") vol "$2" "$3" ;;
 	"mic") mic "$2" "$3" ;;

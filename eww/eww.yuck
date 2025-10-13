@@ -116,30 +116,39 @@
 
 (defwidget audio []
     (box
-	(button
-	    :class {volume < 0 ? "audio_muted" : "audio"}
-	    :onclick "scripts/audio/mute.sh vol"
-	    :onrightclick "scripts/audio/settings.sh vol"
+	(eventbox
+	    :onscroll "scripts/audio/set.sh vol {}"
 
-	    {volume < 0 ?
-		"󰖁  ${-volume - 1}%" :
-		"  ${volume}%"
-	    }
+	    (button
+		:class {volume < 0 ? "audio_muted" : "audio"}
+
+		:onclick "scripts/audio/mute.sh vol"
+		:onrightclick "scripts/audio/settings.sh vol"
+
+		{volume < 0 ?
+		    "󰖁  ${-volume - 1}%" :
+		    "  ${volume}%"
+		}
+	    )
 	)
     )
 )
 
 (defwidget mic []
     (box
-	(button
-	    :class {mic_vol < 0 ? "mic_muted" : "mic"}
-	    :onclick "scripts/audio/mute.sh mic"
-	    :onrightclick "scripts/audio/settings.sh mic"
+	(eventbox
+	    :onscroll "scripts/audio/set.sh mic {}"
 
-	    {mic_vol < 0 ?
-		"󰍭  ${-mic_vol - 1}%" :
-		"  ${mic_vol}%"
-	    }
+	    (button
+		:class {mic_vol < 0 ? "mic_muted" : "mic"}
+		:onclick "scripts/audio/mute.sh mic"
+		:onrightclick "scripts/audio/settings.sh mic"
+
+		{mic_vol < 0 ?
+		    "󰍭  ${-mic_vol - 1}%" :
+		    "  ${mic_vol}%"
+		}
+	    )
 	)
     )
 )

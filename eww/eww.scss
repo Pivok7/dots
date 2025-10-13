@@ -121,10 +121,15 @@ $light: #ccddcc;
   all: unset;
   color: transparent;
   background-color: transparent;
+
+  .music_next:hover, .music_prev:hover {
+    all: unset;
+    color: transparent;
+    background-color: transparent;
+  }
 }
 
 .audio, .mic {
-  all: unset;
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;

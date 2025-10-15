@@ -162,9 +162,9 @@ $light: #ccddcc;
 
 .systray {
   all: unset;
-  border-radius: 10px;
   padding-left: 8px;
   padding-right: 8px;
+  border-radius: 10px;
   color: $light;
   background-color: $dark;
 
@@ -216,7 +216,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session, .dashboard_button {
+.session, .dashboard_button, .systray_menu {
   all: unset;
   border-radius: 10px;
   min-width: 33px;
@@ -224,7 +224,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session:hover, .dashboard_button:hover {
+.session:hover, .dashboard_button:hover, .systray_menu:hover {
   color: $dark;
   background-color: $light;
 }

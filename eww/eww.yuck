@@ -3,10 +3,16 @@
 ;###################
 
 (defwidget bar []
-    (centerbox
-	(workspaces)
-	(music)
-	(sidestuff)
+    (box
+	(eventbox
+	    :onhoverlost "eww update rev_tray=false"
+
+	    (centerbox
+		(workspaces)
+		(music)
+		(sidestuff)
+	    )
+	)
     )
 )
 
@@ -108,7 +114,7 @@
 	(mic)
 	;(battery)
 	(time_bar)
-	(tray)
+	(tray_button)
 	(dashboard_button)
 	(session)
     )
@@ -184,6 +190,15 @@
 	} ${charge}%")
     )
 )
+(defwidget time_bar []
+    (box
+	:class "time"
+
+	(label
+	    :text time
+	)
+    )
+)
 
 (defwidget tray []
     (systray
@@ -192,12 +207,28 @@
     )
 )
 
-(defwidget time_bar []
-    (box
-	:class "time"
+(defvar rev_tray false)
 
-	(label
-	    :text time
+(defwidget tray_button []
+    (box
+	(eventbox
+	    :onhover "eww update rev_tray=true"
+	    :onhoverlost "eww update rev_tray=false"
+
+	    (box
+		:class "systray_menu"
+		:space-evenly "false"
+		(revealer
+		    :transition "slideleft"				
+		    :reveal rev_tray
+		    :duration "500ms"
+		    (tray)
+		)
+		(button
+		    :class "systray_menu"
+		    ""
+		)
+	    )
 	)
     )
 )
@@ -209,6 +240,7 @@
 	    :onclick "scripts/toggle_dashboard.sh"
 	    ""
 	)
+
     )
 )
 

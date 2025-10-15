@@ -216,7 +216,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session, .dashboard_button, .systray_menu {
+.session, .systray_menu {
   all: unset;
   border-radius: 10px;
   min-width: 33px;
@@ -224,33 +224,7 @@ $light: #ccddcc;
   background-color: $dark;
 }
 
-.session:hover, .dashboard_button:hover, .systray_menu:hover {
+.session:hover, .systray_menu:hover {
   color: $dark;
   background-color: $light;
-}
-
-
-.dashboard {
-  all: unset;
-  background-color: $opaque;
-  padding: 4px;
-  color: $light;
-}
-
-.dash_main {
-  padding: 100px 160px 160px 160px;
-
-  .dash_button {
-    all: unset;
-    border-radius: 10px;
-    color: $light;
-    background-color: $dark;
-  }
-
-  .dash_button:hover {
-    all: unset;
-    border-radius: 10px;
-    color: $dark;
-    background-color: $light;
-  }
 }

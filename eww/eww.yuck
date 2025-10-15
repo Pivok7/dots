@@ -16,27 +16,6 @@
     )
 )
 
-(defwidget dashboard []
-    (eventbox
-	:onclick "eww close dashboard"
-
-	(box
-	    :class "dash_main"
-
-	    (button
-		:class "dash_button"
-
-		"dashboard todo"
-	    )
-	    (button
-		:class "dash_button"
-
-		"dashboard todo"
-	    )
-	)
-    )
-)
-
 ;###############
 ;### widgets ###
 ;###############
@@ -115,7 +94,6 @@
 	;(battery)
 	(time_bar)
 	(tray_button)
-	(dashboard_button)
 	(session)
     )
 )
@@ -233,17 +211,6 @@
     )
 )
 
-(defwidget dashboard_button []
-    (box
-	(button
-	    :class "dashboard_button"
-	    :onclick "scripts/toggle_dashboard.sh"
-	    ""
-	)
-
-    )
-)
-
 (defwidget session []
     (box
 	(button
@@ -311,20 +278,4 @@
     :exclusive true
 
     (bar)
-)
-
-(defwindow dashboard
-    :monitor 0
-    :windowtype "desktop"
-    :stacking "overlay"
-
-    :geometry (geometry
-	:x "0%"
-        :y "0%"
-        :width "100%"
-        :height "100%"
-        :anchor "top center"
-    )
-
-    (dashboard)
 )

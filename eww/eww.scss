@@ -198,8 +198,11 @@ $light: #ccddcc;
 
 .systray menu {
   all: unset;
-  border-radius: 10px;
-  padding: 4px;
+  border-style: solid;
+  border-color: $light;
+  border-width: 1px;
+  border-radius: 14px;
+  padding: 6px;
   color: $light;
   background-color: $dark;
 }
